@@ -1,9 +1,10 @@
 /* Needed gulp config */
 
-var os = require('os');
 var gulp = require('gulp');
 var open = require('gulp-open');
 var server = require('gulp-server-livereload');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
 gulp.task('webserver', function() {
     gulp.src('/')
@@ -19,6 +20,16 @@ gulp.task('open', function(){
         .pipe(open());
 });
 
+gulp.task('minify-custom', function () {
+    return gulp.src([
+        /* Add your JS files here, they will be combined in this order */
+        'js/custom.js'
+    ])
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('js'));
+});
+
 /* Watch scss, js and html files, doing different things with each. */
 // gulp.task('default', ['sass', 'scripts', 'browser-sync', 'open'], function () {
 //     /* Watch scss, run the sass task on change. */
@@ -29,10 +40,7 @@ gulp.task('open', function(){
 //     gulp.watch(['*.html'], ['bs-reload']);
 // });
 
-// var gulp = require('gulp');
 // var sass = require('gulp-sass');
-// var uglify = require('gulp-uglify');
-// var rename = require('gulp-rename');
 // var notify = require('gulp-notify');
 // var minifycss = require('gulp-minify-css');
 // var concat = require('gulp-concat');
@@ -41,12 +49,7 @@ gulp.task('open', function(){
 // var reload = browserSync.reload;
 // const sourcemaps = require('gulp-sourcemaps');
 // const autoprefixer = require('gulp-autoprefixer');
-//
-// /* Setup scss path */
-// var paths = {
-//     scss: './sass/*.scss'
-// };
-//
+
 /* Scripts task */
 // gulp.task('scripts', function() {
 //   return gulp.src([
@@ -66,17 +69,7 @@ gulp.task('open', function(){
 //     .pipe(uglify())
 //     .pipe(gulp.dest('js'));
 // });
-//
-// gulp.task('minify-custom', function() {
-//   return gulp.src([
-//     /* Add your JS files here, they will be combined in this order */
-//     'js/custom.js'
-//     ])
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(uglify())
-//     .pipe(gulp.dest('js'));
-// });
-//
+
 // /* Sass task */
 // gulp.task('sass', function () {
 //     gulp.src('scss/style.scss')
