@@ -3,6 +3,31 @@
 var os = require('os');
 var gulp = require('gulp');
 var open = require('gulp-open');
+var server = require('gulp-server-livereload');
+
+gulp.task('webserver', function() {
+    gulp.src('/')
+        .pipe(server({
+            livereload: true,
+            directoryListing: true,
+            open: true
+        }));
+});
+
+gulp.task('open', function(){
+    gulp.src('./index.html')
+        .pipe(open());
+});
+
+/* Watch scss, js and html files, doing different things with each. */
+// gulp.task('default', ['sass', 'scripts', 'browser-sync', 'open'], function () {
+//     /* Watch scss, run the sass task on change. */
+//     gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass']);
+//     /* Watch app.js file, run the scripts task on change. */
+//     gulp.watch(['js/custom.js'], ['minify-custom']);
+//     /* Watch .html files, run the bs-reload task on change. */
+//     gulp.watch(['*.html'], ['bs-reload']);
+// });
 
 // var gulp = require('gulp');
 // var sass = require('gulp-sass');
@@ -122,17 +147,3 @@ var open = require('gulp-open');
 //     });
 // });
 //
-/* Watch scss, js and html files, doing different things with each. */
-// gulp.task('default', ['sass', 'scripts', 'browser-sync', 'open'], function () {
-//     /* Watch scss, run the sass task on change. */
-//     gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass']);
-//     /* Watch app.js file, run the scripts task on change. */
-//     gulp.watch(['js/custom.js'], ['minify-custom']);
-//     /* Watch .html files, run the bs-reload task on change. */
-//     gulp.watch(['*.html'], ['bs-reload']);
-// });
-
-gulp.task('open', function(){
-    gulp.src('./index.html')
-        .pipe(open());
-});
