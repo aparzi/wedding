@@ -4,10 +4,10 @@ var google;
 function init() {
 
     // Coordinates
-    var weddingCerimony = new google.maps.LatLng(41.571119, 14.765825);
-    var weddingParty = new google.maps.LatLng(41.5124118, 14.8231058);
-    
-    var mapOptions = {
+    let weddingCerimony = new google.maps.LatLng(41.571119, 14.765825);
+    let weddingParty = new google.maps.LatLng(41.5124118, 14.8231058);
+
+    let mapOptions = {
         zoom: 12,
         center: new google.maps.LatLng(41.5418578, 14.79548),
         scrollwheel: false,
@@ -16,10 +16,10 @@ function init() {
 
     // Get the HTML DOM element that will contain your map 
     // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map');
+    let mapElement = document.getElementById('map');
 
     // Create the Google Map using out element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
+    let map = new google.maps.Map(mapElement, mapOptions);
 
     // Create Markers
     let markerWeddingCerimony = new google.maps.Marker({
@@ -28,18 +28,32 @@ function init() {
         icon: 'img/loc.png'
     });
 
-    new google.maps.Marker({
+    let markerPartyCerimony = new google.maps.Marker({
         position: weddingParty,
         map: map,
-        icon: 'img/loc.png'
+        icon: 'img/loc-2.png'
     });
 
-    var infowindow = new google.maps.InfoWindow({
-        content:"Hello World!"
+    let toroWindow = new google.maps.InfoWindow({
+        content: '<div>' +
+            '<p>Chiesa Madre - Toro (Cb)</p>' +
+            '<img style="height:100px; width: auto;" src="img/chiesa-madre-marker.jpg" alt="chiesa madre di Toro" />' +
+            '</div>'
+    });
+
+    let cioccaWindow = new google.maps.InfoWindow({
+        content: '<div>' +
+            '<p>Sala Ricevimenti Ciocca - Riccia (Cb)</p>' +
+            '<img style="height:100px;width: auto;" src="img/ciocca-marker.jpg" alt="ristorante ciocca"/>' +
+            '</div>'
     });
 
     google.maps.event.addListener(markerWeddingCerimony, 'click', function() {
-        infowindow.open(map,markerWeddingCerimony);
+        toroWindow.open(map,markerWeddingCerimony);
+    });
+
+    google.maps.event.addListener(markerPartyCerimony, 'click', function() {
+        cioccaWindow.open(map,markerPartyCerimony);
     });
     
 }
