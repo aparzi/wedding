@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alice|Zilla+Slab:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/spinner.min.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -25,7 +26,12 @@
     <![endif]-->
   </head>
   <body>
-    
+
+  <!-- Spinner loading -->
+  <div id="spinner" class="spinner" style="display:none;">
+    <img id="img-spinner" src="img/spinner.gif" alt="Loading..."/>
+  </div>
+
     <!-- Fixed navbar -->
      <!-- navbar-fixed-top -->
     <nav class="navbar navbar-default probootstrap-navbar">
@@ -71,7 +77,7 @@
     <section class="probootstrap-section probootstrap-section-colored probootstrap-wedding-countdown">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center probootstrap-animate"><h4>Il matrimonio inizierà</h4></div>
+          <div class="col-md-12 text-center probootstrap-animate"><h4>Il matrimonio inizier&agrave; tra</h4></div>
           <div class="col-md-12 probootstrap-animate">
             <div class="date-countdown"></div>  
           </div>
@@ -90,12 +96,28 @@
               </figure>
               <span class="probootstrap-caption">Lo Sposo</span>
               <h2 class="text-center">Angelo Parziale</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-                paradisematic country, in which roasted parts of sentences fly into your mouth question ran over her
-                cheek, then she continued her way.</p>
+                <p style="text-align: justify;">Se non lo conoscete gi&agrave;, ve lo presento:<br>
+                  questo &egrave; Angelo Parziale, a breve mio marito. Ci conosciamo da circa... <cite>beh da
+                    sempre!</cite>
+                  Quindi posso dirlo: <cite>lo conosco quasi meglio di me stessa!</cite>
+                </p>
+                <p style="text-align: justify;">
+                  &Egrave; un uomo gentile e altruista, una persona allegra e ottimista e tanto paziente (<cite>soprattutto
+                  con me!</cite> ).<br>
+                  Ama gli animali, la Juventus, la Formula 1 e durante la settimana, dopo il lavoro,
+                  &egrave; il calciatore pi&ugrave; richiesto a calcetto e <cite>lui non se ne perde una di partita!</cite><br>
+                  Crede molto nel valore della famiglia e riesce molto bene nel suo lavoro di
+                  programmatore informatico (come si pu&ograve; notare da questo sito web da lui realizzato).
+                  Da questo punto di vista &egrave; insuperabile, <cite>ma non diteglielo altrimenti si
+                  imbarazza!</cite><br>
+                  A differenza di me, che sono sempre attiva e frenetica, lui &egrave; la persona pi&ugrave; calma del
+                  mondo e forse non sa neanche cosa sia l'ansia (<cite>per quest'ultimo motivo lo invidio molto!</cite> ).
+                <p style="text-align: justify;">
+                  Ultima cosa, se volete che lo sposo sia presente ai festeggiamenti, sperate insieme a me che il 12
+                  giugno 2021
+                  non ci siano partite della Juventus o gare di Formula 1.
+                </p>
+                <p class="text-right"><span><i>Marisa Zappone</i></span></p>
             </div>
 
             <div class="probootstrap-divider probootstrap-animate"><span>&amp;</span></div>
@@ -106,12 +128,29 @@
               </figure>
               <span class="probootstrap-caption">La Sposa</span>
               <h2 class="text-center">Marisa Zappone</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
-              <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks
-                and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her
-                initial into the belt and made herself on the way.</p>
+              <p style="text-align: justify;">Gentilissimi lettori, lei &egrave; Marisa Zappone, presto mia moglie. Non
+                vi preoccupate, se vi state chiedendo chi sia,
+                ci penso io a presentarvela in poche righe (<cite>anche se in realt&agrave; bisognerebbe scriverne un
+                  libro</cite>).
+              </p>
+              <p style="text-align: justify;">
+                Stiamo parlando di una donna molto solare, alla quale piace tanto scherzare e ridere...
+                <cite> vi avviso eh: quando &egrave; felice diventa iperattiva pi&ugrave; del solito e chiacchierona
+                  (soprattutto la mattina presto).</cite><br>
+                Ama la natura, stare all'aria aperta ed esplorare posti nuovi. &Egrave; molto legata
+                alla famiglia e adora i bambini, non a caso ha scelto come lavoro di fare l'insegnante.<br>
+                Nel tempo libero esprime la sua creativit&agrave; con il &ldquo;fai da te&rdquo; e il
+                disegno.
+                Infatti, si &egrave; occupata lei di tutte le decorazioni e i dettagli del nostro matrimonio,
+                realizzando molte cose direttamente a mano.
+                Un'altra passione che ha &egrave; quella di fotograre ogni cosa (<cite>e non si accontenta di pochi
+                scatti: ne fa mille fin quando non &egrave; soddisfatta</cite>).
+              </p>
+              <p style="text-align: justify;">
+                <strong>N.B.</strong> Le piace molto muoversi a ritmo di musica e per questo se volete vederla scatenarsi in pista
+                venite al nostro matrimonio e assicuratevi che ci siano brani latino-americani (<cite>fidatevi &egrave; davvero una gran ballerina!</cite>).
+              </p>
+              <p class="text-right"><span><i>Angelo Parziale</i></span></p>
             </div>
 
           </div>
@@ -127,13 +166,16 @@
         <div class="row">
           <div class="col-md-6 probootstrap-animate">  
             <p><img src="img/img_2.jpg" alt="Toro (Cb)" class="img-responsive img-rounded"></p>
-            <h3>Cerimonia Matrimoniale</h3>
-            <p>La cerimonia matrimoniale avrà luogo il 12 Giugno 2021, alle ore 12 al comune di Toro (Campobasso) &mdash; Chiesa del Santissimo Salvatore (Chiesa Madre), Piazza Luigi Alberto Trotta.</p>
+            <h3>Cerimonia Nuziale</h3>
+            <p>Entrambi toresi, non potevamo non scegliere Toro per la cerimonia nuziale, che avrà luogo il <strong>12 Giugno 2021</strong>
+              alle <strong>ore 12</strong> presso la <strong>Chiesa del Santissimo Salvatore</strong> (Chiesa Madre).
+              Per raggiungerla &egrave; semplice: arrivati in <cite>Piazza del Piano</cite> vedrete il campanile, la chiesa
+              si trova subito dietro. La piazza &egrave; si trova al centro del paese, non potete sbagliarvi!</p>
           </div>
           <div class="col-md-6 probootstrap-animate">
             <p><img src="img/img_1.jpg" alt="Sala Ricevimenti Ciocca" class="img-responsive img-rounded"></p>
-            <h3>Festa di Matrimonio</h3>
-            <p>I festeggiamenti del Matrimonio, previsti ovviamente dopo la cerimonia matrimoniale,
+            <h3>Festeggiamenti</h3>
+            <p>I festeggiamenti del Matrimonio, previsti ovviamente dopo la cerimonia nuziale,
                 si terranno alla Sala Ricevimenti Ciocca. per festeggiare tutti quanti insieme, tra cibo, bevande,  &mdash; Str. Interpoderale Parruccia 86016 • Riccia (CB) • Italia.</p>
           </div>
         </div>
@@ -174,8 +216,8 @@
               <div class="col-md-6">
                 <div class="row probootstrap-gutter30">
                   <div class="col-md-12 probootstrap-animate">
-                    <a class="probootstrap-image image-popup" href="img/our_4.png" style="background-image: url(img/our_4.png)">
-                      <div class="probootstrap-image-for-popup"><img src="img/our_4.png" alt="Foto quattro galleria" class="img-responsive"></div>
+                    <a class="probootstrap-image image-popup" href="img/our_10.jpg" style="background-image: url(img/our_10.jpg)">
+                      <div class="probootstrap-image-for-popup"><img src="img/our_10.jpg" alt="Foto quattro galleria" class="img-responsive"></div>
                     </a>
                   </div>
                   <div class="col-md-12 probootstrap-animate">
@@ -222,8 +264,8 @@
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="row probootstrap-gutter30">
               <div class="col-md-6 probootstrap-animate">
-                <a class="probootstrap-image image-popup" href="img/our_10.jpg" style="background-image: url(img/our_10.jpg)">
-                  <div class="probootstrap-image-for-popup"><img src="img/our_10.jpg" alt="Foto dieci galleria" class="img-responsive"></div>
+                <a class="probootstrap-image image-popup" href="img/our_4.png" style="background-image: url(img/our_4.png)">
+                  <div class="probootstrap-image-for-popup"><img src="img/our_4.png" alt="Foto dieci galleria" class="img-responsive"></div>
                 </a>
               </div>
               <div class="col-md-6 probootstrap-animate">
@@ -258,24 +300,24 @@
             <div class="probootstrap-card probootstrap-animate">
               <form class="probootstrap-form">
                 <div class="form-group">
-                  <label for="name">Nome Cognome *</label>
-                  <input type="text" class="form-control" id="name">
+                  <label for="fullname">Nome e Cognome *</label>
+                  <input type="text" class="form-control" id="fullname">
+                </div>
+<!--                <div class="form-group">-->
+<!--                  <label for="email">Email</label>-->
+<!--                  <input type="text" class="form-control" id="email" autocomplete="off">-->
+<!--                </div>-->
+                <div class="form-group">
+                  <p style="margin-bottom: 0;">Verrai? *</p>
+                  <label id="lblYes" for="yes"><input type="radio" name="reply" id="yes" value="Si, verrò" checked> Si, verr&ograve;</label> <br>
+                  <label id="lblNo" for="no"><input type="radio" name="reply" id="no" value="No, mi spiace non potrò esserci"> No, mi spiace non potr&ograve; esserci</label> <br>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email">
+                  <label for="description">Descrizione</label>
+                  <textarea name="" id="description" cols="20" rows="5" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                  <p>Verrai? *</p>
-                  <label for="yes"><input type="checkbox" id="yes"> Si, verr&ograve;</label> <br>
-                  <label for="no"><input type="checkbox" id="no"> No, mi spiace non potr&ograve; esserci</label> <br>
-                </div>
-                <div class="form-group">
-                  <label for="note">Descrizione</label>
-                  <textarea name="" id="note" cols="20" rows="5" class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                  <input type="submit" class="btn btn-primary btn-lg" value="Send RSVP">
+                  <input type="button" class="btn btn-primary btn-lg" onclick="sendData()" value="Invia">
                 </div>
               </form>
             </div>

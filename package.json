@@ -8,7 +8,7 @@
   "devDependencies": {
     "browser-sync": "latest",
     "gulp": "latest",
-    "gulp-autoprefixer": "latest",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "latest",
     "gulp-concat": "latest",
     "gulp-minify-css": "latest",

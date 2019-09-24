@@ -269,7 +269,7 @@
 
 	var dateCountDown = function () {
 		$('.date-countdown').simplyCountdown({
-			year: 2021, // year
+			anno: 2021, // year
 			month: 6, // month
 			day: 12, // day
 			hours: 11, // Default is 0 [0-23] integer
@@ -350,3 +350,64 @@
 	});
 
 })();
+
+/**
+ * Gestione form risposta invitato
+ */
+function checkData() {
+	var completo = true;
+
+	var fullname = $('#fullname').val();
+	var email = $('#email').val();
+	var reply = $('input[name=reply]:checked').val();
+	var description = $('#description').val();
+
+	var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+	if (!fullname || fullname.trim() === '') {
+		$('#fullname').addClass('error');
+		completo = false;
+	}
+
+	if (email && !emailRegex.test(email)) {
+		$('#email').addClass('error');
+		completo = false;
+	}
+
+	if (!reply || reply.trim() === '') {
+		$('#lblYes').addClass('error');
+		$('#lblNo').addClass('error');
+		completo = false;
+	}
+
+	return completo;
+
+}
+
+function sendData() {
+
+	if (!checkData()) {
+		return;
+	}
+
+	setTimeout(function () {
+		$('#spinner').hide();
+	}, 5000)
+	// $.ajax({
+	// 	url: 'http://localhost/progetti/api-wedding/sendEmail',
+	// 	method: 'POST',
+	// 	data: {
+	// 		"fullname": fullname,
+	// 		"email": email,
+	// 		"reply": true,
+	// 		"description": description
+	// 	},
+	// 	success: function (result) {
+	// 		$(this).hide();
+	//
+	// 	},
+	// 	error: function (error) {
+	// 		$(this).hide();
+	// 	}
+	// });
+}

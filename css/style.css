@@ -1602,3 +1602,7 @@ a:hover, a:focus, a:active {
     max-width: 100%;
   }
 }
+
+.error {
+  border: 2px red solid !important;
+}

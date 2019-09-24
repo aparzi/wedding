@@ -5,6 +5,10 @@ var open = require('gulp-open');
 var server = require('gulp-server-livereload');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var sass = require('gulp-sass');
+var minifycss = require('gulp-minify-css');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('webserver', function() {
     gulp.src('/')
@@ -30,6 +34,24 @@ gulp.task('minify-custom', function () {
         .pipe(gulp.dest('js'));
 });
 
+gulp.task('sass', function () {
+    return gulp.src('scss/*.scss')
+        .pipe(sass({
+            errLogToConsole: true,
+            outputStyle: 'expanded',
+            precision: 10
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('css'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss())
+        .pipe(gulp.dest('css'));
+});
+
 /* Watch scss, js and html files, doing different things with each. */
 // gulp.task('default', ['sass', 'scripts', 'browser-sync', 'open'], function () {
 //     /* Watch scss, run the sass task on change. */
@@ -40,15 +62,8 @@ gulp.task('minify-custom', function () {
 //     gulp.watch(['*.html'], ['bs-reload']);
 // });
 
-// var sass = require('gulp-sass');
 // var notify = require('gulp-notify');
-// var minifycss = require('gulp-minify-css');
 // var concat = require('gulp-concat');
-// var plumber = require('gulp-plumber');
-// var browserSync = require('browser-sync');
-// var reload = browserSync.reload;
-// const sourcemaps = require('gulp-sourcemaps');
-// const autoprefixer = require('gulp-autoprefixer');
 
 /* Scripts task */
 // gulp.task('scripts', function() {
@@ -70,34 +85,6 @@ gulp.task('minify-custom', function () {
 //     .pipe(gulp.dest('js'));
 // });
 
-// /* Sass task */
-// gulp.task('sass', function () {
-//     gulp.src('scss/style.scss')
-//     .pipe(plumber())
-//     .pipe(sass({
-//       errLogToConsole: true,
-//
-//       //outputStyle: 'compressed',
-//       // outputStyle: 'compact',
-//       // outputStyle: 'nested',
-//       outputStyle: 'expanded',
-//       precision: 10
-//     }))
-//
-//     .pipe(sourcemaps.init())
-//     .pipe(autoprefixer({
-//         browsers: ['last 2 versions'],
-//         cascade: false
-//     }))
-//     .pipe(gulp.dest('css'))
-//
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(minifycss())
-//     .pipe(gulp.dest('css'))
-//     /* Reload the browser CSS after every change */
-//     .pipe(reload({stream:true}));
-// });
-//
 // gulp.task('merge-styles', function () {
 //
 //     return gulp.src([
