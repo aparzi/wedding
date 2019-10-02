@@ -354,60 +354,63 @@
 /**
  * Gestione form risposta invitato
  */
-function checkData() {
-	var completo = true;
 
-	var fullname = $('#fullname').val();
-	var email = $('#email').val();
-	var reply = $('input[name=reply]:checked').val();
-	var description = $('#description').val();
-
-	var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-	if (!fullname || fullname.trim() === '') {
-		$('#fullname').addClass('error');
-		completo = false;
-	}
-
-	if (email && !emailRegex.test(email)) {
-		$('#email').addClass('error');
-		completo = false;
-	}
-
-	if (!reply || reply.trim() === '') {
-		$('#lblYes').addClass('error');
-		$('#lblNo').addClass('error');
-		completo = false;
-	}
-
-	return completo;
-
+function resetForm() {
+	$('#fullname').removeClass('error');
+	$('#lblYes').removeClass('error');
+	$('#lblNo').removeClass('error');
+	$('#description').removeClass('error');
+	$('#alertSuccess').css('display', 'none');
+	$('#alertError').css('display', 'none');
 }
 
 function sendData() {
+    $('#spinner').show();
 
-	if (!checkData()) {
-		return;
-	}
-
-	setTimeout(function () {
-		$('#spinner').hide();
-	}, 5000)
+	// resetForm();
+    //
+	// var fullname = $('#fullname').val();
+	// var reply = $('input[name=reply]:checked').val();
+	// var description = $('#description').val();
+    //
+	// if (!fullname || fullname.trim() === '') {
+	// 	$('#fullname').addClass('error');
+	// 	return;
+	// }
+    //
+	// if (!reply || reply.trim() === '') {
+	// 	$('#lblYes').addClass('error');
+	// 	$('#lblNo').addClass('error');
+	// 	return;
+	// }
+    //
+	// if (description && description.trim() === '') {
+	// 	$('#description').addClass('error');
+	// 	return;
+	// }
+    //
+	// $('#spinner').show();
+    //
 	// $.ajax({
 	// 	url: 'http://localhost/progetti/api-wedding/sendEmail',
 	// 	method: 'POST',
 	// 	data: {
 	// 		"fullname": fullname,
-	// 		"email": email,
-	// 		"reply": true,
+	// 		"reply": reply,
 	// 		"description": description
 	// 	},
 	// 	success: function (result) {
-	// 		$(this).hide();
-	//
+	// 		$('#spinner').hide();
+	// 		if (result && result['esito']) {
+	// 			$('#alertSuccess').css('display', 'block');
+	// 			$('#dibBtnSend').css('display', 'none');
+	// 		} else {
+	// 			$('#alertError').css('display', 'block');
+	// 		}
 	// 	},
 	// 	error: function (error) {
-	// 		$(this).hide();
+	// 		$('#spinner').hide();
+	// 		$('#alertError').css('display', 'block');
 	// 	}
 	// });
 }

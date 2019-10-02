@@ -300,26 +300,24 @@
             <div class="probootstrap-card probootstrap-animate">
               <form class="probootstrap-form">
                 <div class="form-group">
-                  <label for="fullname">Nome e Cognome *</label>
-                  <input type="text" class="form-control" id="fullname">
+                  <label for="fullname">Nome e Cognome * &nbsp; (eventualmente famiglia)</label>
+                  <input type="text" class="form-control" id="fullname" autocomplete="off">
                 </div>
-<!--                <div class="form-group">-->
-<!--                  <label for="email">Email</label>-->
-<!--                  <input type="text" class="form-control" id="email" autocomplete="off">-->
-<!--                </div>-->
                 <div class="form-group">
                   <p style="margin-bottom: 0;">Verrai? *</p>
                   <label id="lblYes" for="yes"><input type="radio" name="reply" id="yes" value="Si, verrò" checked> Si, verr&ograve;</label> <br>
                   <label id="lblNo" for="no"><input type="radio" name="reply" id="no" value="No, mi spiace non potrò esserci"> No, mi spiace non potr&ograve; esserci</label> <br>
                 </div>
                 <div class="form-group">
-                  <label for="description">Descrizione</label>
-                  <textarea name="" id="description" cols="20" rows="5" class="form-control"></textarea>
+                  <label for="description">Descrizione &nbsp; (opzionale)</label>
+                  <textarea name="" id="description" cols="20" rows="5" class="form-control" autocomplete="off"></textarea>
                 </div>
-                <div class="form-group">
+                <div id="dibBtnSend" class="form-group">
                   <input type="button" class="btn btn-primary btn-lg" onclick="sendData()" value="Invia">
                 </div>
               </form>
+              <div id="alertSuccess" class="alert alert-success" role="alert" style="display: none;">Grazie della tua risposta!</div>
+              <div id="alertError" class="alert alert-danger" role="alert" style="display: none;">Risposta non inviata. Riprovare!</div>
             </div>
           </div>
         </div>
