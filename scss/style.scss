@@ -669,7 +669,7 @@ a {
 		padding: 3em 0;
 	}
 	&.probootstrap-section-colored, &.probootstrap-section-colored-darker {
-		background: $brand-primary;
+		background: $background-gradient-primary;
 		color: $brand-white;
 		h1, h2, h3 {
 			color: $brand-white;
@@ -684,7 +684,7 @@ a {
 }
 
 .probootstrap-footer {
-	background: darken($brand-primary, 12%);
+	background: $background-gradient-primary;
 	padding: 70px 0;
 	color: rgba(255,255,255,.5);
 	a {
@@ -1403,5 +1403,9 @@ a {
 
 .error {
 	border: 2px red solid !important;
+}
+
+.text-white {
+	color: $brand-white !important;
 }
 
