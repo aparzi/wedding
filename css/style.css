@@ -46,7 +46,7 @@ h1, h2, h3, .text-intro-wrap .text-intro h2, h4 {
   font-weight: 900;
   line-height: 1.2;
   font-family: "Zilla Slab", serif;
-  color: #b1b881;
+  color: #537fc8;
 }
 
 h1 {
@@ -77,11 +77,11 @@ p, ul, ol {
 a {
   -webkit-transition: .3s all;
   transition: .3s all;
-  color: #b1b881;
+  color: #537fc8;
 }
 
 a:hover, a:focus, a:active {
-  color: #a7af71;
+  color: #4071c2;
   text-decoration: none;
 }
 
@@ -393,7 +393,7 @@ a:hover, a:focus, a:active {
 }
 
 .probootstrap-navbar .navbar-nav.active > a {
-  color: #b1b881 !important;
+  color: #537fc8 !important;
 }
 
 .probootstrap-navbar .dropdown-submenu {
@@ -489,12 +489,12 @@ a:hover, a:focus, a:active {
 }
 
 .probootstrap-navbar.scrolled .navbar-nav > li.active > a {
-  color: #b1b881 !important;
+  color: #537fc8 !important;
 }
 
 @media screen and (max-width: 768px) {
   .probootstrap-navbar.scrolled .navbar-nav > li.active > a {
-    color: #b1b881 !important;
+    color: #537fc8 !important;
   }
 }
 
@@ -616,7 +616,7 @@ a:hover, a:focus, a:active {
 .probootstrap-groom-bride .probootstrap-divider span {
   display: block;
   margin-top: 210px;
-  color: #b1b881;
+  color: #537fc8;
 }
 
 @media screen and (max-width: 768px) {
@@ -720,36 +720,36 @@ a:hover, a:focus, a:active {
 }
 
 .btn.btn-primary {
-  border: 1px solid #b1b881;
-  background: #b1b881;
+  border: 1px solid #537fc8;
+  background: #537fc8;
   color: #ffffff;
 }
 
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
-  background: #b5bc88;
+  background: #5b85ca;
 }
 
 .btn.btn-primary:focus, .btn.btn-primary:active {
   outline: none;
-  border: 1px solid #b1b881;
+  border: 1px solid #537fc8;
 }
 
 .btn.btn-ghost {
   background: transparent;
-  border: 1px solid #b1b881;
-  color: #b1b881;
+  border: 1px solid #537fc8;
+  color: #537fc8;
 }
 
 .btn.btn-ghost:hover {
-  background: #b1b881;
+  background: #537fc8;
   color: #ffffff;
 }
 
 .btn.btn-ghost:focus, .btn.btn-ghost:active {
   outline: none;
   background: transparent;
-  color: #b1b881;
-  border: 1px solid #b1b881;
+  color: #537fc8;
+  border: 1px solid #537fc8;
 }
 
 .probootstrap-section {
@@ -794,7 +794,7 @@ a:hover, a:focus, a:active {
 }
 
 .probootstrap-section.probootstrap-section-colored-darker {
-  background: #a7af71;
+  background: #4071c2;
 }
 
 .probootstrap-footer {
@@ -849,7 +849,7 @@ a:hover, a:focus, a:active {
 }
 
 .probootstrap-card {
-  border: 2px solid #b1b881;
+  border: 2px solid #537fc8;
   background: #ffffff;
   padding: 40px;
   color: #000000 !important;
@@ -887,7 +887,7 @@ a:hover, a:focus, a:active {
 .probootstrap-form .form-control:active, .probootstrap-form .form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
-  border: 2px solid #b1b881;
+  border: 2px solid #537fc8;
 }
 
 .probootstrap-form .form-group:last-child {
@@ -998,7 +998,7 @@ a:hover, a:focus, a:active {
 
 .probootstrap-heading .primary-heading {
   font-family: "Zilla Slab", serif;
-  color: #b1b881;
+  color: #537fc8;
   margin: 0;
   padding: 0;
   font-size: 80px;
@@ -1046,7 +1046,7 @@ a:hover, a:focus, a:active {
   background: none;
   border: none;
   margin: 0 0 0;
-  background: #b1b881;
+  background: #537fc8;
 }
 
 .flexslider .probootstrap-slider-text {
@@ -1072,7 +1072,7 @@ a:hover, a:focus, a:active {
 .flexslider .slides > li {
   background-size: cover;
   background-position: center center;
-  background-repeat: none;
+  background-repeat: no-repeat;
 }
 
 .flexslider .slides > li.overlay:before {
@@ -1280,14 +1280,14 @@ a:hover, a:focus, a:active {
 
 .owl-theme .owl-controls .owl-nav [class*="owl-"] i {
   font-size: 24px;
-  background: #b1b881 !important;
+  background: #537fc8 !important;
   padding: 12px;
   -webkit-transition: .5s all;
   transition: .5s all;
 }
 
 .owl-theme .owl-controls .owl-nav [class*="owl-"]:hover i, .owl-theme .owl-controls .owl-nav [class*="owl-"]:focus i {
-  background: #b1b881 !important;
+  background: #537fc8 !important;
 }
 
 .owl-theme .owl-dots {
