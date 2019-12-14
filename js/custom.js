@@ -269,12 +269,19 @@
 
 	var dateCountDown = function () {
 		$('.date-countdown').simplyCountdown({
-			anno: 2021, // year
+			year: 2021, // year
 			month: 6, // month
 			day: 12, // day
 			hours: 11, // Default is 0 [0-23] integer
 			minutes: 0, // Default is 0 [0-59] integer
 			seconds: 0, // Default is 0 [0-59] integer
+			words: { //words displayed into the countdown
+				days: 'Giorni',
+				hours: 'Ore',
+				minutes: 'Minuti',
+				seconds: 'Secondi',
+				pluralLetter: ''
+			},
 		});
 	};
 
@@ -365,52 +372,51 @@ function resetForm() {
 }
 
 function sendData() {
-    $('#spinner').show();
 
-	// resetForm();
-    //
-	// var fullname = $('#fullname').val();
-	// var reply = $('input[name=reply]:checked').val();
-	// var description = $('#description').val();
-    //
-	// if (!fullname || fullname.trim() === '') {
-	// 	$('#fullname').addClass('error');
-	// 	return;
-	// }
-    //
-	// if (!reply || reply.trim() === '') {
-	// 	$('#lblYes').addClass('error');
-	// 	$('#lblNo').addClass('error');
-	// 	return;
-	// }
-    //
-	// if (description && description.trim() === '') {
-	// 	$('#description').addClass('error');
-	// 	return;
-	// }
-    //
-	// $('#spinner').show();
-    //
-	// $.ajax({
-	// 	url: 'http://localhost/progetti/api-wedding/sendEmail',
-	// 	method: 'POST',
-	// 	data: {
-	// 		"fullname": fullname,
-	// 		"reply": reply,
-	// 		"description": description
-	// 	},
-	// 	success: function (result) {
-	// 		$('#spinner').hide();
-	// 		if (result && result['esito']) {
-	// 			$('#alertSuccess').css('display', 'block');
-	// 			$('#dibBtnSend').css('display', 'none');
-	// 		} else {
-	// 			$('#alertError').css('display', 'block');
-	// 		}
-	// 	},
-	// 	error: function (error) {
-	// 		$('#spinner').hide();
-	// 		$('#alertError').css('display', 'block');
-	// 	}
-	// });
+	resetForm();
+
+	var fullname = $('#fullname').val();
+	var reply = $('input[name=reply]:checked').val();
+	var description = $('#description').val();
+
+	if (!fullname || fullname.trim() === '') {
+		$('#fullname').addClass('error');
+		return;
+	}
+
+	if (!reply || reply.trim() === '') {
+		$('#lblYes').addClass('error');
+		$('#lblNo').addClass('error');
+		return;
+	}
+
+	if (description && description.trim() === '') {
+		$('#description').addClass('error');
+		return;
+	}
+
+	$('#spinner').show();
+
+	$.ajax({
+		url: 'http://localhost/progetti/api-wedding/sendEmail',
+		method: 'POST',
+		data: {
+			"fullname": fullname,
+			"reply": reply,
+			"description": description
+		},
+		success: function (result) {
+			$('#spinner').hide();
+			if (result && result['esito']) {
+				$('#alertSuccess').css('display', 'block');
+				$('#dibBtnSend').css('display', 'none');
+			} else {
+				$('#alertError').css('display', 'block');
+			}
+		},
+		error: function (error) {
+			$('#spinner').hide();
+			$('#alertError').css('display', 'block');
+		}
+	});
 }

@@ -19,11 +19,6 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('open', function(){
-    gulp.src('./index.html')
-        .pipe(open());
-});
-
 gulp.task('minify-custom', function () {
     return gulp.src([
         /* Add your JS files here, they will be combined in this order */
